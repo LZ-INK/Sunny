@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\UI\UIWindow.cs" />
+    <Compile Include="Assets\Script\UI\HP.cs" />
     <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Other\LaunchArcMesh.cs" />
     <Compile Include="Assets\Arts resources\Item-Feedback\EndDestory.cs" />
-    <Compile Include="Assets\Gem.cs" />
+    <Compile Include="Assets\Script\Gem.cs" />
     <Compile Include="Assets\Script\Util\SceneLoader.cs" />
     <Compile Include="Assets\Script\Data\PlayerData.cs" />
     <Compile Include="Assets\ItemManager.cs" />
@@ -68,7 +69,11 @@
     <Compile Include="Assets\Script\Fox\PlayerClimbLadder.cs" />
     <Compile Include="Assets\LevelManager.cs" />
     <Compile Include="Assets\Title\UIManager.cs" />
+    <Compile Include="Assets\Script\Cherry.cs" />
+    <Compile Include="Assets\Script\Data\LevelCatalog.cs" />
+    <Compile Include="Assets\HpIcon.cs" />
     <Compile Include="Assets\Other\LaunchArcRenderer.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
     <Compile Include="Assets\Script\Util\MonoSingleton.cs" />
     <Compile Include="Assets\Script\Fox\PlayerMove.cs" />
     <Compile Include="Assets\UI Kit Pro - Kawaii\Scripts\TabController.cs" />

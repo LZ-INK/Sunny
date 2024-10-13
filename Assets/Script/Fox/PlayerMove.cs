@@ -8,19 +8,19 @@ using UnityEngine;
 /// </summary>
 public class PlayerMove : MonoBehaviour
 {
-    
-    [Range(1, 10)]
-    public float jumpVelocity;
 
-    [Range(1, 10)]
-    public float Movespeed = 5;
-    [Range(1, 10)]
-    public int ClimbSpeed = 3;
+    /* [Range(1, 10)]
+     public float jumpVelocity;
 
-    [Range(1, 10)]
-    public int MaxJunpCount = 1;
-     
+     [Range(1, 10)]
+     public float Movespeed = 5;
+     [Range(1, 10)]
+     public int ClimbSpeed = 3;
 
+     [Range(1, 10)]
+     public int MaxJunpCount = 1;*/
+
+    public PlayerData Data;
     
     public float groundedSkin = 0.05F;
     public float fallMultiplier = 2.5F; //��ɫ�������
@@ -80,7 +80,7 @@ public class PlayerMove : MonoBehaviour
         if (JumpRequest)
         {
             animator.SetTrigger("JumpRequest");
-            rb.AddForce(Vector2.up * jumpVelocity,ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * Data.jumpVelocity, ForceMode2D.Impulse);
             //animator.SetTrigger("JumpRequest");
             JumpRequest =false;
         }
@@ -88,13 +88,17 @@ public class PlayerMove : MonoBehaviour
         {
             Vector2 boxCenter = (Vector2)this.transform.position + Vector2.down * (((playerSize.y + boxSize.y) * 0.5F) - cc.offset.y);
             isGround = (Physics2D.OverlapBox(boxCenter,boxSize,0F, JumplayerMask) != null);
+            if (isGround)
+            {
+                jumpCounter = 0;
+            }
         }
         if (ClimbRequest)
         {
             animator.SetFloat("ClimbSpeed", Input.GetAxisRaw("Vertical"));
             rb.gravityScale = 0F;
             Vector2 direction = new Vector2(0, MoveY);
-            rb.velocity = new Vector2(MoveX, direction.y * ClimbSpeed);
+            rb.velocity = new Vector2(MoveX, direction.y * Data.ClimbSpeed);
         }
     }
     private void OnTriggerEnter2D(Collider2D c)
@@ -149,7 +153,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Move()
     {
-        float MoveX = Input.GetAxis("Horizontal") * Movespeed;
+        float MoveX = Input.GetAxis("Horizontal") * Data.Movespeed;
         animator.SetFloat("Speed", Mathf.Abs(MoveX));
         //
         if (MoveX != 0)
@@ -195,7 +199,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void Jump()
     {
-        if (jumpCounter >= MaxJunpCount && !isGround )
+        if (jumpCounter >= Data.MaxJunpCount && !isGround )
         {
             return;
         }

@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data File/Player Data")]
-public class Player : ScriptableObject
+public class PlayerData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Range(1, 10)]
+    public float jumpVelocity;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Range(1, 10)]
+    public float Movespeed = 5;
+    [Range(1, 10)]
+    public int ClimbSpeed = 3;
+
+    [Range(1, 10)]
+    public int MaxJunpCount = 1;
 }

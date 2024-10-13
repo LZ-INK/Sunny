@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-public class Gem : Item
+public class Cherry : Item
 {
     private void Start()
     {
@@ -10,7 +10,7 @@ public class Gem : Item
     }
     public void Onv()
     {
-        Debug.Log("特殊方法");
+        Debug.Log("Cherry特殊方法");
     }
     private void OnDestroy()//暂时使用
     {

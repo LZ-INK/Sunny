@@ -8,7 +8,7 @@ public class FeetBackManager : MonoSingleton<FeetBackManager>
 
     public void ItemFeedback(Transform transform)
     {
-        GameObject.Instantiate(feedback,transform.position,Quaternion.identity,this.transform);
+        Instantiate(feedback,transform.position,Quaternion.identity,this.transform);
     }
 
 }
