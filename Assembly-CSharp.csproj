@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\Fox\PlayerMove.cs" />
     <Compile Include="Assets\UI Kit Pro - Kawaii\Scripts\TabController.cs" />
     <Compile Include="Assets\FeetBackManager.cs" />
+    <Compile Include="Assets\Script\Monster\State.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
